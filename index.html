@@ -150,7 +150,7 @@
                 <div class="objects">
                   <div v-for="weapon in requiredBaseItems.weapons" :key="weapon.id" :data-id="weapon.id" class="object weapon shopping-item" :class="{selected: weapon.selected, special: weapon.special, dlc1: weapon.dlc1, dlc2: weapon.dlc2, dlc3: weapon.dlc3, dlc4: weapon.dlc4, dlc5: weapon.dlc5}" :title="weapon.title" @click="toggleItem(weapon)" @mouseenter="onMouseEnter(weapon)" @mouseleave="onMouseLeave(weapon)">
                     <div class="icon" :class="`icon-${weapon.id}`"></div>
-                    <div v-if="config.titles" class="title">{{weapon.id}}</div>
+                    <div v-if="config.titles" class="title">{weapon.id</div>
                   </div>
                 </div>
               </div>
@@ -159,7 +159,7 @@
                 <div class="objects">
                   <div v-for="passive in requiredBaseItems.passives" :key="passive.id" :data-id="passive.id" class="object passive shopping-item" :class="{selected: passive.selected, special: passive.special, dlc1: passive.dlc1, dlc2: passive.dlc2, dlc3: passive.dlc3, dlc4: passive.dlc4, dlc5: passive.dlc5}" :title="passive.title" @click="toggleItem(passive)" @mouseenter="onMouseEnter(passive)" @mouseleave="onMouseLeave(passive)">
                     <div class="icon" :class="`icon-${passive.id}`"></div>
-                    <div v-if="config.titles" class="title">{{passive.id}}</div>
+                    <div v-if="config.titles" class="title">{{passive.name}}</div>
                   </div>
                 </div>
               </div>
@@ -250,7 +250,7 @@
                     ></div>
                   </template>
                 </div>
-                <div v-if="config.titles" class="title">{{ character.id }}</div>
+                <div v-if="config.titles" class="title">{{ character.name }}</div>
               </div>
             </div>
           </section>
@@ -297,7 +297,7 @@
                 <div v-if="config.combinations" class="items">
                   <div v-for="item in weapon.items" class="icon" :class="`icon-${item.id}`" :title="item.title"></div>
                 </div>
-                <div v-if="config.titles" class="title">{{weapon.id}}</div>
+                <div v-if="config.titles" class="title">{{weapon.name}}</div>
               </div>
             </transition-group>
           </section>
@@ -344,7 +344,7 @@
                 <div v-if="config.combinations" class="items">
                   <div v-for="item in evolution.items" class="icon" :class="`icon-${item.id}`" :title="item.title"></div>
                 </div>
-                <div v-if="config.titles" class="title">{{evolution.id}}</div>
+                <div v-if="config.titles" class="title">{{evolution.name}}</div>
               </div>
             </transition-group>
           </section>
@@ -369,7 +369,7 @@
                 <div v-if="config.combinations" class="items">
                   <div v-for="item in passive.items" class="icon" :class="`icon-${item.id}`" :title="item.title"></div>
                 </div>
-                <div v-if="config.titles" class="title">{{passive.id}}</div>
+                <div v-if="config.titles" class="title">{{passive.name}}</div>
               </div>
             </transition-group>
           </section>
@@ -417,7 +417,7 @@
                 <div v-if="config.impacts" class="impacts">
                   <div v-for="impact in impactsById[arcana.id]" class="impact" :class="itemsById[impact.substring(1)]?.selected ? (impact[0] === '+' ? 'positive' : 'negative') : '' " :title="impact.substring(1)"></div>
                 </div>
-                <div v-if="config.titles" class="roman" :class="arcana.id.includes('darkana') ? 'darkana': 'arcana'">{{arcana.roman}}</div>
+                <div v-if="config.titles" class="roman" :class="arcana.id.includes('darkana') ? 'darkana': 'arcana'">{{arcana.name}}</div>
               </div>
             </transition-group>
           </section>
@@ -462,7 +462,7 @@
                   <div style="width: 100%"></div>
                   <div v-for="item in stage.items.slice(0, -4)" class="icon" :class="`icon-${item.id}`" :title="item.title"></div>
                 </div>
-                <div v-if="config.titles" class="title">{{stage.id}}</div>
+                <div v-if="config.titles" class="title">{{stage.name}}</div>
               </div>
             </div>
           </section>
